@@ -1,0 +1,12 @@
+{
+  "apiGatewayRequestTemplate": {
+    "application/json": {
+      "httpMethod": "$context.httpMethod",
+      "body": "$input.json('$')",
+      "pathParams" : "$input.params().path",
+      "queryParams" : "$input.params().querystring",
+      "place_id": "$input.params('place_id')",
+      "ads_id": "$input.params('ads_id')"
+    }
+  }
+}

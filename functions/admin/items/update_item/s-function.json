@@ -1,5 +1,5 @@
 {
-  "name": "ads",
+  "name": "update_item",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: pixiv",
   "customName": false,
@@ -13,18 +13,14 @@
   },
   "endpoints": [
     {
-      "path": "ads",
-      "method": "GET",
+      "path": "admin/ads/{ads_id}",
+      "method": "PUT",
       "type": "AWS",
       "authorizationType": "none",
       "authorizerFunction": false,
       "apiKeyRequired": false,
       "requestParameters": {},
-      "requestTemplates": {
-        "application/json": {
-          "place_id": "$input.params('place_id')"
-        }
-      },
+      "requestTemplates": "$${apiGatewayRequestTemplate}",
       "responses": {
         "400": {
           "statusCode": "400"
@@ -33,10 +29,10 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {
-            "application/javascript;charset=UTF-8": "Empty"
+            "application/json;charset=UTF-8": "Empty"
           },
           "responseTemplates": {
-            "application/javascript;charset=UTF-8": "callback($input.json('$'))"
+            "application/json;charset=UTF-8": ""
           }
         }
       }

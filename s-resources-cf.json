@@ -45,7 +45,7 @@
               "Action": [
                 "*"
               ],
-              "Resource": "arn:aws:dynamodb:ap-northeast-1:054928022652:table/*"
+              "Resource": "arn:aws:dynamodb:[リージョン]:[アカウント]:table/*"
             }
           ]
         },

@@ -1,5 +1,5 @@
 {
-  "name": "ads",
+  "name": "delete_place",
   "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: pixiv",
   "customName": false,
@@ -13,8 +13,8 @@
   },
   "endpoints": [
     {
-      "path": "ads",
-      "method": "GET",
+      "path": "admin/places/{place_id}",
+      "method": "DELETE",
       "type": "AWS",
       "authorizationType": "none",
       "authorizerFunction": false,
@@ -33,10 +33,10 @@
           "statusCode": "200",
           "responseParameters": {},
           "responseModels": {
-            "application/javascript;charset=UTF-8": "Empty"
+            "application/json;charset=UTF-8": "Empty"
           },
           "responseTemplates": {
-            "application/javascript;charset=UTF-8": "callback($input.json('$'))"
+            "application/json;charset=UTF-8": ""
           }
         }
       }
